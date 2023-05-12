@@ -30,7 +30,10 @@ app.use(cors())
 const PORT = process.env.PORT || 3000
 
 app.post('/webhook', (req, res) => {
-    console.log(req)
+    logger.info({
+        message: 'request body',
+        data: req.body,
+    })
     
     return res.sendStatus(200)
 })
