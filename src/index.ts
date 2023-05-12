@@ -28,12 +28,13 @@ app.use(expressRateLimit({
 app.use(express.json())
 app.use(helmet())
 app.use(cors())
+
 app.disable('x-powered-by')
 
 const PORT = process.env.PORT || 3000
 
-const allowBranchs = ['main']
-const path = '/Users/ramonpaolomaram/Documents/nodejs/teste'
+const allowBranchs = ['main'] // Example: 'main', 'master', 'test'
+const path = '<path-project>' // Example: /home/foo/documents/nodejs/project
 
 app.post('/webhook', (req, res) => {
     const { ref, repository, sender } = req.body
