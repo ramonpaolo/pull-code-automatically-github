@@ -1,76 +1,4 @@
-## Languages Translates
-- [Portuguese](#portuguese)
-- [English](#english)
-
-<div id="english" />
-
-# English
-
-##### Ops: this translate was made by me(Ramon Paolo Maran). Sorry for any problem in translate : )
-
-## Index
-- [About the Project](#abouttheproject-english)
-- [How it's works?](#howwork-english)
-- [Technologies Useds](#technologiesuseds-english)
-- [How execute this project?](#howexecute-english)
-- [Tips](#tips-english)
-
----
-
-<div id="abouttheproject-english"/>
-
-# 📑 About the Project
-
----
-
-<div id="howwork-english"/>
-
-# How it's works?
-
----
-<div id="technologiesuseds-english"/>
-
-# 🚀 Technologies Useds
-- TypeScript
-- NodeJs
-- Express
-
----
-<div id="howexecute-english"/>
-
-# 📁 How Execute this Project?
-Requirements: NodeJs 14.17 LTS and Yarn
-
-```bash
-# clone the repositore
-$ git clone https://github.com/ramonpaolo/
-
-# enter inside the folder of project
-$ cd /
-
-# install the dependencies:
-$ yarn
-
-# build the application:
-$ yarn build
-
-# init the project:
-$ yarn start
-```
-
----
-<div id="tips-english"/>
-
-# Tips
-
----
-</br>
-
-<div id="portuguese" />
-
-# Portuguese
-
----
+# Pull Code Automatically
 
 ## Índice
 - [Sobre o Projeto](#abouttheproject-portuguese)
@@ -85,18 +13,21 @@ $ yarn start
 
 # 📑 Sobre o Projeto
 
+O projeto consiste, em ser um código automatizador para fazer a atualização do código com base em webhooks recebidos do github.
+
 ---
 
 <div id="howwork-portuguese"/>
 
 # Como Funciona ?
+O projeto consiste, em a pessoa subir o servidor, e configurar a URL do servidor, como um recebedor de webhooks do repositório do github, fazendo com que cada atualização que ocorra nas branchs do repositório, o servidor irá atualizar o código local automaticamente.
 
 ---
 <div id="technologiesuseds-portuguese"/>
 
 # 🚀 Tecnologias Utilizadas
-- TypeScript
 - NodeJs
+- TypeScript
 - Express
 
 ---
@@ -107,10 +38,10 @@ Pré-requesitos: NodeJs 14.17 LTS e Yarn
 
 ```bash
 # clonar repositório
-$ git clone https://github.com/ramonpaolo/
+$ git clone https://github.com/ramonpaolo/pull-code-automatically-github pull-code
 
 # entrar na pasta do projeto
-$ cd /
+$ cd /pull-code
 
 # instalar as depêndencias:
 $ yarn install
@@ -127,9 +58,13 @@ $ yarn start
 
 # Dicas
 
-![GitHub top language](https://img.shields.io/github/languages/top/ramonpaolo/)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ramonpaolo/)
-![GitHub](https://img.shields.io/github/license/ramonpaolo/)
+Documentação do GitHub sobre webhooks: [Link](https://docs.github.com/pt/webhooks-and-events/webhooks/about-webhooks)
+
+---
+
+![GitHub top language](https://img.shields.io/github/languages/top/ramonpaolo/pull-code-automatically-github)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ramonpaolo/pull-code-automatically-github)
+![GitHub](https://img.shields.io/github/license/ramonpaolo/pull-code-automatically-github)
 
 <br/>
 
