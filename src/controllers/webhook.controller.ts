@@ -30,45 +30,46 @@ const webhook = (req: Request, res: Response) => {
 
     const branch = String(ref).split('/').pop()!
 
-    if (allowBranchs.includes(branch)) {
-        logger.warn({
-            message: `updating code in branch '${branch}'`,
-            data: {
-                trace_id: randomKey,
-            }
-        })
-
-        exec(`cd ${path} && git checkout ${branch} && git pull`, (error, stdout, stderr) => {
-            if(error){
-                logger.error({
-                    message: `error exec: ${error.name}`,
-                    error,
-                })
-
-                return;
-            }
-
-            logger.info({
-                message: 'git pull executed with success',
-                data: {
-                    directory_executed: path,
-                    branch,
-                    trace_id: randomKey,
-                    stdout,
-                    stderr,
-                }
-            })
-        })
-    } else {
+    if (!allowBranchs.includes(branch)) {
         logger.info({
             message: `branch '${branch}' não permitida`,
             data: {
                 trace_id: randomKey,
             }
         })
+        return res.sendStatus(200)
     }
 
-    return res.sendStatus(200)
+    logger.warn({
+        message: `updating code in branch '${branch}'`,
+        data: {
+            trace_id: randomKey,
+        }
+    })
+
+    exec(`cd ${path} && git checkout ${branch} && git pull`, (error, stdout, stderr) => {
+        if (error) {
+            logger.error({
+                message: `error exec: ${error.name}`,
+                error,
+            })
+
+            return res.sendStatus(500);
+        }
+
+        logger.info({
+            message: 'git pull executed with success',
+            data: {
+                directory_executed: path,
+                branch,
+                trace_id: randomKey,
+                stdout,
+                stderr,
+            }
+        })
+
+        return res.sendStatus(200)
+    })
 }
 
 export default webhook
